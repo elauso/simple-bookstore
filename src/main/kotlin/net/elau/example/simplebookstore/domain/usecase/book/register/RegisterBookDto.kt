@@ -1,7 +1,6 @@
 package net.elau.example.simplebookstore.domain.usecase.book.register
 
 import net.elau.example.simplebookstore.domain.entity.book.*
-import net.elau.example.simplebookstore.entity.book.*
 
 data class RegisterBookDto(
 

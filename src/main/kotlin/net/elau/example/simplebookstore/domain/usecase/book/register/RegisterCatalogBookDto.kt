@@ -2,7 +2,7 @@ package net.elau.example.simplebookstore.domain.usecase.book.register
 
 import net.elau.example.simplebookstore.domain.entity.book.*
 
-data class RegisterBookDto(
+data class RegisterCatalogBookDto(
 
     val name: String,
 

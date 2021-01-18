@@ -11,7 +11,7 @@ data class Borrow(
 
     val returnDate: LocalDate
 ) {
-    val id: UUID = UUID.randomUUID()
+    val registration: UUID = UUID.randomUUID()
 
     val bookList: MutableList<Book> = emptyList<Book>().toMutableList()
 

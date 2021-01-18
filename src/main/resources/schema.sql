@@ -20,3 +20,22 @@ CREATE TABLE IF NOT EXISTS books (
   language varchar(10) NOT NULL,
   PRIMARY KEY (id)
 );
+
+CREATE TABLE IF NOT EXISTS borrows (
+  id bigint(20) NOT NULL AUTO_INCREMENT,
+  registration varchar(36) NOT NULL,
+  returnDate date NOT NULL,
+  borrowDate date NOT NULL,
+  student_id bigint(20) NOT NULL,
+  PRIMARY KEY (id),
+  FOREIGN KEY (student_id) references students(id)
+);
+
+CREATE TABLE IF NOT EXISTS borrows_books (
+  id bigint(20) NOT NULL AUTO_INCREMENT,
+  borrow_id bigint(20) NOT NULL,
+  book_id bigint(20) NOT NULL,
+  PRIMARY KEY (id),
+  FOREIGN KEY (book_id) references books(id),
+  FOREIGN KEY (borrow_id) references borrows(id)
+);

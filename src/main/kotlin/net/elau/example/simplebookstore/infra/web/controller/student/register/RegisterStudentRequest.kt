@@ -24,8 +24,7 @@ data class RegisterStudentRequest(
 
     @NotBlank
     val phoneNumber: String? = null
-) {
+)
 
-    fun buildRegisterStudentDto() =
-        RegisterStudentDto(name!!, registration!!, course!!, email!!, phoneDDD!!, phoneNumber!!)
-}
+fun RegisterStudentRequest.buildRegisterStudentDto() =
+    RegisterStudentDto(name!!, registration!!, course!!, email!!, phoneDDD!!, phoneNumber!!)

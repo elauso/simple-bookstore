@@ -2,6 +2,7 @@ package net.elau.example.simplebookstore.infra.config
 
 import net.elau.example.simplebookstore.domain.entity.book.BookRepository
 import net.elau.example.simplebookstore.domain.entity.student.StudentRepository
+import net.elau.example.simplebookstore.domain.usecase.book.list.ListCatalogBookUseCase
 import net.elau.example.simplebookstore.domain.usecase.book.register.RegisterCatalogBookUseCase
 import net.elau.example.simplebookstore.domain.usecase.student.register.RegisterStudentUseCase
 import net.elau.example.simplebookstore.infra.`interface`.db.student.StudentRepositoryJdbcTemplate
@@ -23,5 +24,8 @@ class DependencyConfig {
     fun registerStudentUseCase(studentRepository: StudentRepository) = RegisterStudentUseCase(studentRepository)
 
     @Bean
-    fun registerCatalogBooktUseCase(bookRepository: BookRepository) = RegisterCatalogBookUseCase(bookRepository)
+    fun registerCatalogBookUseCase(bookRepository: BookRepository) = RegisterCatalogBookUseCase(bookRepository)
+
+    @Bean
+    fun listCatalogBookUseCase(bookRepository: BookRepository) = ListCatalogBookUseCase(bookRepository)
 }

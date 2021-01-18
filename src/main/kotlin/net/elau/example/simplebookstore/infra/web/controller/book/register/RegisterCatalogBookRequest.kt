@@ -28,8 +28,7 @@ data class RegisterCatalogBookRequest(
 
     @NotNull
     val language: Language? = null
-) {
+)
 
-    fun buildRegisterCatalogBookDto() =
-        RegisterCatalogBookDto(name!!, isbn10!!, isbn13!!, genre!!, publisher!!, paperback!!, language!!)
-}
+fun RegisterCatalogBookRequest.buildRegisterCatalogBookDto() =
+    RegisterCatalogBookDto(name!!, isbn10!!, isbn13!!, genre!!, publisher!!, paperback!!, language!!)

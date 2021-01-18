@@ -17,7 +17,7 @@ data class RegisterCatalogBookDto(
     val paperback: Int,
 
     val language: Language
-) {
+)
 
-    fun buildBook() = Book(name, ISBN10(isbn10), ISBN13(isbn13), genre, publisher, paperback, language)
-}
+fun RegisterCatalogBookDto.buildBook() =
+    Book(name, ISBN10(isbn10), ISBN13(isbn13), genre, publisher, paperback, language)

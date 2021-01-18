@@ -18,7 +18,6 @@ data class RegisterStudentDto(
     val phoneDDD: String,
 
     val phoneNumber: String
-) {
+)
 
-    fun buildStudent() = Student(name, registration, course, Email(email), Phone(phoneDDD, phoneNumber))
-}
+fun RegisterStudentDto.buildStudent() = Student(name, registration, course, Email(email), Phone(phoneDDD, phoneNumber))

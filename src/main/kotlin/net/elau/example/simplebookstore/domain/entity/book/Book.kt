@@ -1,5 +1,7 @@
 package net.elau.example.simplebookstore.domain.entity.book
 
+import net.elau.example.simplebookstore.domain.usecase.book.list.ListCatalogBookDto
+
 data class Book(
 
     val name: String,
@@ -16,3 +18,6 @@ data class Book(
 
     val language: Language
 )
+
+fun Book.buildListCatalogBookDto() =
+    ListCatalogBookDto(name, isbn10.value, isbn13.value, genre, publisher, paperback, language)
